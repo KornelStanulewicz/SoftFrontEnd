@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Provider } from 'react-redux';
 
 import Home from './views/home/Home';
 import Movie from './views/movie/Movie';
 import Page404 from './views/404page/Page404';
+import store from './store';
 
 import './App.css';
 
@@ -12,11 +14,13 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Switch>
-          <Route path="/movie/:id" component={Movie} />
-          <Route path="/" component={Home} exact />
-          <Route path="*" component={Page404} />
-        </Switch>
+        <Provider store={store}>
+          <Switch>
+            <Route path="/movie/:id" component={Movie} />
+            <Route path="/" component={Home} exact />
+            <Route path="*" component={Page404} />
+          </Switch>
+        </Provider>
       </BrowserRouter>
     </div>
   );
