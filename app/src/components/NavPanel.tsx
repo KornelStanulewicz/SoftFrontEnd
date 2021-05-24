@@ -37,6 +37,7 @@ const NavPanel = () => {
                     <ul>
                         <li>{redirectTo('/', 'Home')}</li>
                         <li>{redirectTo('/movie/:id', 'Movie')}</li>
+                        <li>{redirectTo('/todos', 'ToDo')}</li>
                     </ul>
                 </div>
             </Drawer>

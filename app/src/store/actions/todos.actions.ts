@@ -26,15 +26,15 @@ export interface SetDeleteTodoAction {
 export type Actions = SetNewTodoAction | SetTodoDaneAction | SetDeleteTodoAction;
 
 export const todosActions = {
-    setTodoDone: (todo: Todo): SetNewTodoAction =>({
+    setNewTodo: (todo: Todo): SetNewTodoAction =>({
         type: TodoStoreActions.SET_NEW_TODO,
         payload: { todo }
     }),
-    setNewTodo: (id: number): SetTodoDaneAction =>({
+    setTodoDone: (id: number): SetTodoDaneAction =>({
         type: TodoStoreActions.SET_TODO_DONE,
         payload: { id }
     }),
-    setDeleteTodo: (todo: Todo) =>({
+    setDeleteTodo: (todo: Todo): SetDeleteTodoAction =>({
         type: TodoStoreActions.SET_DELETE_TODO,
         payload: { todo }
     }),

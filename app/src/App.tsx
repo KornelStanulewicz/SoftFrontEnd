@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import Home from './views/home/Home';
 import Movie from './views/movie/Movie';
 import Page404 from './views/404page/Page404';
+import TodoPanel from './views/todoPanel/TodoPanel';
 import store from './store';
 
 import './App.css';
@@ -18,6 +19,7 @@ const App = () => {
           <Switch>
             <Route path="/movie/:id" component={Movie} />
             <Route path="/" component={Home} exact />
+            <Route path="/todos" component={TodoPanel} />
             <Route path="*" component={Page404} />
           </Switch>
         </Provider>
